@@ -4,23 +4,14 @@ let randAnimations = ["bounce", "flash", "pulse", "rubberBand", "shakeX", "shake
 function randSelect(randAnimations) {
     return "animate__animated animate__" + randAnimations[Math.floor((Math.random() * randAnimations.length))];
 }
-// console.log(randSelect(randAnimations));
 $(function(){
-    //$(h1).onload('append', randSelect);
-    // $("attentionSeeker").on('load', function(){
         $("#attentionSeeker").addClass(randSelect(randAnimations));
-    // })
 
     $("#submit").on('click', function () {
-        //let yellowGo = ("#yellow").is(':checked');
         let yellowCheck = $('#yellow')[0].checked;
         let blueCheck = $('#blue')[0].checked;
         let greenCheck = $('#green')[0].checked;
-        // let blueGo = ("#blue").is(":checked");
-        // let greenGo = ("#green").is(":checked");
-        // console.log(yellowCheck, greenCheck, blueCheck);
         if(yellowCheck == false && greenCheck == false && blueCheck == false){
-            //$('#toast').toast({ autohide: false }).toast('show'); 
             $('#toast').toast({autohide: true}).toast('show');
         }
          
@@ -32,37 +23,27 @@ $(function(){
         let greenCheck = $('#green')[0].checked;
 
         if(yellowCheck == true && blueCheck == true && greenCheck == true){
-            //yellowCheck = true;
             $('#yellow').prop('checked', false);
             $('#' + 'yellow' + 'Img').addClass('animate__animated animate__bounceOutUp');
-            //blueCheck = true;
             $('#blue').prop('checked', false);
             $('#' + 'blue' + 'Img').addClass('animate__animated animate__bounceOutUp');
-            //greenCheck = true;
             $('#green').prop('checked', false);
             $('#' + 'green' + 'Img').addClass('animate__animated animate__bounceOutUp');
         }
         else if (yellowCheck == false && blueCheck == false && greenCheck == false){
             yellowCheck = true;
             $('#yellow').prop('checked', true);
-
             $('#' + 'yellow' + 'Img').removeClass().addClass('animate__animated animate__bounceInDown');
-        
-            //$('#' + 'yellow' + 'Img').addClass('animate__animated animate__bounceOutUp');
             blueCheck = true;
             $('#blue').prop('checked', true);
-            // $('#' + 'blue' + 'Img').addClass('animate__animated animate__bounceOutUp');
             $('#' + 'blue' + 'Img').removeClass().addClass('animate__animated animate__bounceInDown');
             greenCheck = true;
             $('#green').prop('checked', true);
-            //$('#' + 'green' + 'Img').addClass('animate__animated animate__bounceOutUp');
             $('#' + 'green' + 'Img').removeClass().addClass('animate__animated animate__bounceInDown');
         }
 
         else if (yellowCheck == true || blueCheck == true || greenCheck == true){
-            // $('.form-check-input').each(function () {
-            //     $(this).prop('checked', false);
-            // });
+        
             if(yellowCheck == false){
                 yellowCheck = true;
                 $('#yellow').prop('checked', true);
@@ -80,19 +61,6 @@ $(function(){
                 $('#' + 'green' + 'Img').removeClass().addClass('animate__animated animate__bounceInDown');
             }
         }
-
-        // if(yellowCheck == false && blueCheck == false && greenCheck == false){
-        //     yellowCheck = true;
-        //     blueCheck = true;
-        //     greenCheck = true;
-        // }
-        // else if(yellowCheck == true && blueCheck == false && greenCheck == false){
-        //     blueCheck=true;
-        //     greenCheck=true;
-        // }
-        // else if(yellowCheck == true && blueCheck == true && greenCheck == false){   
-        //     greenCheck=true;
-        // }
         
     });
 
