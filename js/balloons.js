@@ -96,30 +96,24 @@ $(function(){
         
     });
 
-    $("form-check-label").hover(function (){
-        if($(this.for == 'yellow')){
-            $('#attentionSeeker').css('background-color', 'yellow')
-        }
-    });
-
     $(".form-check-label").mouseover(function (){
-        if(this.for == 'yellow'){
+        if(this.getAttribute('for') == 'yellow'){
             $("#attentionSeeker").css('background-color', 'yellow');
         }
-        if(this.for == 'green'){
+        if(this.getAttribute('for') == 'green'){
             $("#attentionSeeker").css('background-color', 'green');
         }
-        if(this.for == 'blue'){
+        if(this.getAttribute('for') == 'blue'){
             $("#attentionSeeker").css('background-color', 'blue');
         }
     }).mouseout(function () {
-        if(this.for == 'yellow'){
+        if(this.getAttribute('for') == 'yellow'){
             $("#attentionSeeker").css('background-color', 'transparent');
         }
-        if(this.for == 'green'){
+        if(this.getAttribute('for') == 'green'){
             $("#attentionSeeker").css('background-color', 'transparent');
         }
-        if(this.for == 'blue'){
+        if(this.getAttribute('for') == 'blue'){
             $("#attentionSeeker").css('background-color', 'blue');
         }
     });
